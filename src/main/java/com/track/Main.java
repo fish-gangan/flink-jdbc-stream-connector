@@ -9,38 +9,7 @@ import org.apache.flink.streaming.api.functions.source.SourceFunction;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
-//import com.mysql.cj.jdbc.Driver
 
-//import com.mysql.jdbc.Driver.*
-
-
-//        env.fromElements(
-//                new Book(101L, "《乡野怪谈》",  "彭干"),
-//                new Book(102L, "《麻衣神相》",  "彭干"),
-//                new Book(103L, "《上海风云》",  "彭干"),
-//                new Book(104L, "《大闹天宫》", "彭干")
-//        ).addSink(
-//                JdbcSink.sink(
-//                        "insert into books (id, bookName, authors) values (?, ?, ?)",
-//                        (statement, book) -> {
-//                            statement.setLong(1, book.id);
-//                            statement.setString(2, book.bookName);
-//                            statement.setString(3, book.author);
-//                        },
-//                        JdbcExecutionOptions.builder()
-//                                .withBatchSize(1000)
-//                                .withBatchIntervalMs(200)
-//                                .withMaxRetries(5)
-//                                .build(),
-//                        new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
-//                                .withUrl("jdbc:postgresql://dbhost:5432/postgresdb")
-//                                .withDriverName("org.postgresql.Driver")
-//                                .withUsername("someUser")
-//                                .withPassword("somePassword")
-//                                .build()
-//                ));
-//
-//        env.execute();
 @ToString
 @Getter
 @Setter
