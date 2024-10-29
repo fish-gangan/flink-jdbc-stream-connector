@@ -18,10 +18,10 @@ public class Main {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.addSource(new MySource()).setParallelism(1).addSink(JdbcBatchSink.sink(
                 JdbcConnectionCoreOptions.builder()
-                        .withUrl("jdbc:bytehouse://tenant-2000007949-cn-shanghai.bytehouse.ivolces.com:19000?secure=true&database=venus")
+                        .withUrl("jdbc:bytehouse://ip:19000?secure=true&database=库名")
                         .withUsername("bytehouse")
                         .withDriverName("com.bytedance.bytehouse.jdbc.ByteHouseDriver")
-                        .withPassword("aAUvBmMEoo:eeLDmfk9Mt")
+                        .withPassword("password")
                         .withConnectionCheckTimeoutSeconds(60)
                         .build(),
                 JdbcExecutionCoreOptions.builder()
