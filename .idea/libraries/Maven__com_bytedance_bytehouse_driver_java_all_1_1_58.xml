@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bytedance.bytehouse:driver-java:all:1.1.58">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bytedance/bytehouse/driver-java/1.1.58/driver-java-1.1.58-all.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bytedance/bytehouse/driver-java/1.1.58/driver-java-1.1.58-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bytedance/bytehouse/driver-java/1.1.58/driver-java-1.1.58-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
