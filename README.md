@@ -1,3 +1,28 @@
+# 依赖
+```pom
+
+
+
+
+</dependencies>
+     <dependency>
+        <!--用于bean到可插入sql对象Entity的转换-->
+         <groupId>cn.hutool</groupId>
+         <artifactId>hutool-db</artifactId>
+         <version>5.8.16</version>
+    </dependency>
+ 
+     <dependency>
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>30.1.1-jre</version>
+     </dependency>
+</dependencies>
+ 
+ 
+
+
+```
 
 # 说明 
 - 支持java 普通对象直接录入数据库,要求对象字段和数据库字段名称相同,暂不支持字段名称转换

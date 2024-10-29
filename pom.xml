@@ -7,7 +7,7 @@
     <groupId>groupId</groupId>
     <artifactId>flink-jdbc-stream-connector</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,6 @@
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <log4j.version>2.17.1</log4j.version>
-        <hutool.version>5.8.16</hutool.version>
     </properties>
 
 
@@ -42,22 +41,8 @@
     </repositories>
     <dependencies>
 
-        <dependency>
-            <!--	bytehouse  JDBC -->
-            <groupId>com.bytedance.bytehouse</groupId>
-            <artifactId>driver-java</artifactId>
-            <version>1.1.58</version>
-            <classifier>all</classifier>
-        </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>2.0.33</version> <!-- 请替换为你想使用的版本号 -->
-            <!--			<scope>provided</scope>-->
-        </dependency>
-        <!-- Apache Flink dependencies -->
-        <!-- These dependencies are provided, because they should not be packaged into the JAR file. -->
+
         <dependency>
             <!--	Flink DataStream支持,不需要打包-->
             <groupId>org.apache.flink</groupId>
@@ -109,52 +94,37 @@
         <!--*****************************************连接器和format 格式化器************************************************-->
 
         <dependency>
-            <!--yarn.provided.lib.dirs-->
+            <!-- mysql8 的驱动 -->
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
             <!--			<scope>provided</scope>-->
         </dependency>
+
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-db</artifactId>
-            <version>${hutool.version}</version>
+            <!--	Bytehouse  JDBC 驱动 -->
+            <groupId>com.bytedance.bytehouse</groupId>
+            <artifactId>driver-java</artifactId>
+            <version>1.1.58</version>
+            <classifier>all</classifier>
         </dependency>
 
         <dependency>
-            <!--yarn.provided.lib.dirs-->
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-jdbc</artifactId>
-            <version>3.1.2-1.18</version>
-            <!--			<scope>provided</scope>-->
+            <!--用于bean到可插入sql对象Entity的转换-->
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-db</artifactId>
+            <version>5.8.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
         </dependency>
         <dependency>
-            <!--yarn.provided.lib.dirs-->
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka</artifactId>
-            <version>3.1.0-1.18</version>
-            <!--			<scope>provided</scope>-->
-        </dependency>
-        <dependency>
-            <!--../flink/lib/flink-csv-1.18.1.jar 已存在,不需要打包-->
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-files</artifactId>
-            <version>${flink.version}</version>
-            <!--			<scope>provided</scope>-->
-        </dependency>
-        <dependency>
-            <!--../flink/lib/flink-csv-1.18.1.jar 已存在,不需要打包-->
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-json</artifactId>
-            <version>${flink.version}</version>
-            <!--			<scope>provided</scope>-->
-        </dependency>
-        <dependency>
-            <!--../flink/lib/flink-csv-1.18.1.jar 已存在,不需要打包-->
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-csv</artifactId>
-            <version>${flink.version}</version>
-            <!--			<scope>provided</scope>-->
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
         </dependency>
 
         <dependency>
@@ -182,11 +152,7 @@
             <version>1.7.36</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-        </dependency>
+
 
     </dependencies>
     <build>

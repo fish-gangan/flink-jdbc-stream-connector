@@ -336,7 +336,7 @@ class SimpleJdbcBatchExecutor<R> implements JdbcBatchExecutor<R> {
 
 class ConnectionProvider implements Serializable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(org.apache.flink.connector.jdbc.internal.connection.SimpleJdbcConnectionProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ConnectionProvider.class);
 
     private static final long serialVersionUID = 1L;
 

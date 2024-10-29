@@ -176,28 +176,3 @@ class MySource implements SourceFunction<Book> {
     }
 }
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-
-
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.addSource(new MySource()).setParallelism(1).addSink(JdbcBatchSink.sink(
-                JdbcConnectionCoreOptions.builder()
-                        .withUrl("url")
-                        .withUsername("用户名")
-                        .withDriverName("com....")
-                        .withPassword("密码")
-                        .withConnectionCheckTimeoutSeconds(60)
-                        .build(),
-                JdbcExecutionCoreOptions.builder()
-                        .withTableName("表名")
-                        .withBatchSize(50000)//批次大小
-                        .withBatchIntervalMs(2000)//interval 间隔
-                        .withMaxRetries(1)//录入失败时，尝试次数
-                        .build()
-        )).setParallelism(2);
-        env.execute();
-
-
-    }
-}
