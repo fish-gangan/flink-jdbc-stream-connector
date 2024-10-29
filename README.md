@@ -1,8 +1,24 @@
 # 依赖
 ```pom
-
-
-
+    <repositories>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <!--火山引擎bytehouse 仓库地址-->
+            <id>bytedance</id>
+            <name>ByteDance Public Repository</name>
+            <url>https://artifact.bytedance.com/repository/releases</url>
+        </repository>
+    </repositories>
 
 </dependencies>
      <dependency>
@@ -17,9 +33,18 @@
          <artifactId>guava</artifactId>
          <version>30.1.1-jre</version>
      </dependency>
+     
+     <dependency>
+        <!-- bytehouse 还需要以下配置 -->
+        <groupId>com.bytedance.bytehouse</groupId>
+        <artifactId>driver-java</artifactId>
+        <version>1.1.58</version>
+        <classifier>all</classifier>
+     </dependency>
 </dependencies>
  
- 
+
+
 
 
 ```
