@@ -61,7 +61,7 @@
   
 - 仅支持单表录入,不支持多表同时录入
   
-- 不支持JSON String, 但是可以将JSON String 转成Map
+- 不支持JSON String, 但支持Map
 
 - 不支持FlinkSql 语法
 # demo
